@@ -1,0 +1,253 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Usando uma fonte mais elegante */
+}
+
+/* Estilos para o Menu de Navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Logo à esquerda e menu à direita */
+    align-items: center; /* Centraliza os itens verticalmente */
+    background-color: #315b76; /* Cor do fundo do menu */
+    padding: 1rem 5%; /* Padding mais refinado */
+    position: fixed; /* Fixa a navbar no topo */
+    top: 0; /* Posiciona a navbar no topo */
+    left: 0; /* Garante que a navbar comece na parte esquerda */
+    width: 100%; /* Garante a largura total */
+    z-index: 1000; /* Coloca a navbar acima do conteúdo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para dar um toque mais elegante */
+    border-bottom: 1px solid #e0e0e0; /* Linha fina no final da navbar */
+}
+
+.logo {
+    width: 50px; /* Tamanho do logo ajustado */
+    height: auto; /* Garante que a proporção do logo seja mantida */
+}
+
+/* Estilo do Menu */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Maior espaçamento entre os itens */
+}
+
+.menu-item {
+    text-decoration: none;
+    color: white;
+    font-size: 18px; /* Tamanho de fonte maior e mais elegante */
+    font-weight: 500; /* Fonte com peso médio para maior sofisticação */
+    padding: 10px 15px; /* Padding mais equilibrado */
+    border-radius: 6px; /* Cantos arredondados para um visual mais suave */
+    transition: all 0.3s ease; /* Transição suave para hover e transformação */
+    text-transform: uppercase; /* Deixa os links em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento maior entre as letras */
+}
+
+.menu-item:hover {
+   color: #ff7700; /* Cor laranja de destaque ao passar o mouse */
+   transform: translateY(-3px); /* Leve elevação ao passar o mouse */
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra leve ao passar o mouse */
+}
+
+/* Adicionando um efeito de brilho para a navbar */
+.navbar:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Aumenta a sombra ao passar o mouse */
+}
+
+/* Corpo da página (evitando sobreposição da navbar fixa) */
+body {
+    margin-top: 80px; /* Deixa espaço para a navbar fixa */
+    background-color: #f5f5f5; /* Cor de fundo mais suave para a página */
+}
+
+/* Ajuste de espaçamento da navbar para telas menores */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 15px;
+    }
+
+    .menu {
+        gap: 15px; /* Reduz o espaçamento entre os itens no mobile */
+    }
+
+    .menu-item {
+        font-size: 16px; /* Ajusta o tamanho da fonte no mobile */
+    }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Fonte mais formal e adequada */
+    
+}
+
+
+/* 🔷 BODY */
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 80px; /* Evita que o conteúdo fique por baixo da navbar */
+}
+/* 🔷 TÍTULO */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: -70px;
+}
+
+/* 🔷 FORMULÁRIO */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    margin: 20px 0 5px;
+}
+
+/* Select */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+/* 🔷 CONTAINER DE PERGUNTAS/GABARITO */
+#gabarito-container, #perguntas-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px; /* Espaçamento entre as questões */
+    overflow-x: auto; /* Permite rolagem horizontal se precisar */
+    padding-bottom: 10px;
+}
+
+/* Cada questão */
+.questao {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre elementos da questão */
+    white-space: nowrap;
+    padding: 15px;
+    border-bottom: 2px solid #aaa; /* Linha mais visível */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Mais profundidade */
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* Número da questão */
+.questao span {
+    font-weight: bold;
+    display: block; /* Faz com que os números fiquem um abaixo do outro */
+}
+
+/* Opções A, B, C, D */
+.opcoes {
+    display: flex;
+    gap: 20px; /* Espaçamento entre opções */
+    padding-left: 10px;
+    border-left: 2px solid #ccc; /* Linha de separação */
+}
+
+/* Inputs do gabarito */
+input[type="radio"] {
+    width: 3cm;  /* Largura do botão */
+    height: 2cm; /* Altura do botão */
+    border-radius: 5px; /* Tornando o botão retangular */
+    appearance: none; /* Remove o estilo padrão do navegador */
+    background-color: #e6e6e6cf; /* Cor de fundo */
+    border: 2px solid #aaaaaa; /* Borda do botão */
+    position: relative; /* Necessário para posicionar o "check" interno */
+}
+
+input[type="radio"]:checked {
+    background-color: #4CAF50; /* Cor quando o botão estiver selecionado */
+}
+
+input[type="radio"]:checked::after {
+    content: ''; /* Cria o "check" no botão */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+/* Labels e letras acima do botão de rádio */
+.radio-label {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+    margin-right: 125px;
+}
+
+/* Estilo das letras (A, B, C, D) */
+.radio-label span {
+    position: absolute;
+    top: -10px; /* Coloca a letra acima do botão */
+    left: 50%; /* Centraliza as letras horizontalmente */
+    transform: translateX(200%); /* Centraliza a letra */
+    font-size: 40px; /* Tamanho da letra */
+    font-weight: bold;
+}
+
+/* Botão de envio */
+button[type="submit"] {
+    width: auto;             /* Largura automática */
+    padding: 10px 20px;      /* Um pouco de padding para tornar o botão pequeno e com boa aparência */
+    height: 40px;            /* Altura do botão */
+    border-radius: 20px;     /* Bordas arredondadas */
+    background-color: #007BFF; /* Cor de fundo do botão */
+    color: white;            /* Cor do texto */
+    font-size: 16px;         /* Tamanho da fonte */
+    font-weight: bold;       /* Deixa o texto em negrito */
+    border: none;            /* Remove a borda padrão */
+    cursor: pointer;         /* Cursor em forma de mãozinha */
+    transition: background-color 0.3s ease; /* Transição suave para mudança de cor */
+    margin-top: 20px;         /* Espaçamento superior */
+    align-self: center;      /* Alinha o botão ao centro horizontalmente dentro do formulário */
+}
+
+/* Efeito hover para o botão */
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+
+
+
+
+
+
+
+
+
+
+
+

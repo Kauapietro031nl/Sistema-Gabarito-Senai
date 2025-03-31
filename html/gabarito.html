@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Gabarito</title>
+    <link rel="stylesheet" href="../css/gabarito.css">
+    <link rel="icon" type="image/png" href="../IMG/marca.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script defer src="../js/gabarito.js"></script> <!-- Garantindo um único script -->
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="/img/SENAI_branco (1).svg" alt="Logo" class="logo"> <!-- Logo -->
+        <ul class="menu">
+            <li><a href="/HTML/gabarito.html" class="menu-item">Cadastrar Gabarito</a></li>
+            <li><a href="/HTML/correcao.html" class="menu-item">Correção</a></li>
+            <li><a href="/HTML/relatorio.html" class="menu-item">Relatório</a></li>
+        </ul>
+    </nav>
+
+    <h1>Cadastro de Gabarito</h1>
+    <form id="formulario-gabarito">
+        <label for="curso">Curso:</label>
+        <select id="curso" name="curso" required>
+            <option value="">Selecione um curso</option>
+        </select>
+        <div class="container">
+            <label class="radio-label">
+                <span>A</span> <!-- Letra A acima do botão -->
+            </label>
+        
+            <label class="radio-label">
+                <span>B</span> <!-- Letra B acima do botão -->
+            </label>
+        
+            <label class="radio-label">
+                <span>C</span> <!-- Letra C acima do botão -->
+            </label>
+        
+            <label class="radio-label">
+                <span>D</span> <!-- Letra D acima do botão -->
+            </label>
+        </div>
+
+        <div id="gabarito-container"></div>
+    </form>
+</body>
+</html>

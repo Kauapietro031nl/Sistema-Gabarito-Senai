@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correção</title>
+    <link rel="icon" type="image/png" href="../IMG/marca.png">
+    <link rel="stylesheet" href="../css/correcao.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="/img/SENAI_branco (1).svg" alt="Logo" class="logo"> <!-- Logo -->
+        <ul class="menu">
+            <li><a href="/HTML/gabarito.html" class="menu-item">Cadastrar Gabarito</a></li>
+            <li><a href="/HTML/correcao.html" class="menu-item">Correção</a></li>
+            <li><a href="/HTML/relatorio.html" class="menu-item">Relatório</a></li>
+        </ul>
+    </nav>
+
+    <h1>Correção da Prova</h1>
+    <form id="formulario-correcao">
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" name="matricula" required>
+
+        <label for="nome_aluno">Nome do Aluno:</label>
+        <input type="text" id="nome_aluno" name="nome_aluno" required>
+
+        <label for="curso">Curso:</label>
+        <select id="curso" name="curso" required>
+            <option value="">Selecione um curso</option>
+        </select>
+
+        <div id="perguntas-container"></div>
+
+        <button type="submit">Enviar Respostas</button>
+    </form>
+    <div id="resultado"></div>
+    <script src="../js/correcao.js"></script>
+</body>
+</html>

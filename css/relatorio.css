@@ -1,0 +1,178 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Usando uma fonte mais elegante */
+}
+
+/* Estilos para o Menu de Navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Logo à esquerda e menu à direita */
+    align-items: center; /* Centraliza os itens verticalmente */
+    background-color: #315b76; /* Cor do fundo do menu */
+    padding: 1rem 5%; /* Padding mais refinado */
+    position: fixed; /* Fixa a navbar no topo */
+    top: 0; /* Posiciona a navbar no topo */
+    left: 0; /* Garante que a navbar comece na parte esquerda */
+    width: 100%; /* Garante a largura total */
+    z-index: 1000; /* Coloca a navbar acima do conteúdo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para dar um toque mais elegante */
+}
+
+.logo {
+    width: 50px; /* Tamanho do logo ajustado */
+    height: auto; /* Garante que a proporção do logo seja mantida */
+}
+
+/* Estilo do Menu */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Maior espaçamento entre os itens */
+}
+
+.menu-item {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px; /* Tamanho de fonte maior e mais elegante */
+    font-weight: 500; /* Fonte com peso médio para maior sofisticação */
+    padding: 10px 15px; /* Padding mais equilibrado */
+    border-radius: 6px; /* Cantos arredondados para um visual mais suave */
+    transition: all 0.3s ease; /* Transição suave para hover e transformação */
+    text-transform: uppercase; /* Deixa os links em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento maior entre as letras */
+}
+
+.menu-item:hover {
+    color: #ff7700; /* Cor laranja de destaque ao passar o mouse */
+    transform: translateY(-3px); /* Leve elevação ao passar o mouse */
+}
+
+/* Adicionando um efeito de brilho para a navbar */
+
+
+/* Ajuste de espaçamento da navbar para telas menores */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 15px;
+    }
+
+    .menu {
+        gap: 15px; /* Reduz o espaçamento entre os itens no mobile */
+    }
+
+    .menu-item {
+        font-size: 16px; /* Ajusta o tamanho da fonte no mobile */
+    }
+}
+
+/* 🔷 BODY */
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 80px; /* Evita sobreposição com a navbar */
+}
+
+/* 🔷 FORMULÁRIO */
+.form-group {
+
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Select */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Botão */
+button {
+    padding: 10px;
+    background-color: #0e2a48;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #002043;
+}
+
+/* 🔷 RELATÓRIO */
+#relatorio-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 🔷 TABELA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+thead {
+    background-color: #061d36;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 🔷 DETALHE DO ALUNO */
+.detalhe-aluno {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+h3, h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+

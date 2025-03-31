@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="icon" type="image/png" href="../IMG/marca.png">
+    <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="https://www.fiemg.com.br/senai/wp-content/uploads/sites/12/2023/02/SENAI_branco.svg" alt="Logo" class="nav-logo">
+    </nav>
+    
+    <div class="container">
+        <div class="links">
+            <a href="/HTML/loginInstrutor.html">Login</a>
+            <a href="/HTML/cadastro.html">Cadastro</a>
+        </div>
+        <form id="cadastroForm">
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="CPF" required>
+            </div>
+            <div class="form-group">
+                <label for="nome">NOME:</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">EMAIL:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">SENHA:</label>
+                <input type="password" id="senha" name="senha" placeholder="Senha" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="click-form">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+    
+
+    <script>
+        document.getElementById("cadastroForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            
+            const formData = {
+                cpf: document.getElementById("cpf").value,
+                nome: document.getElementById("nome").value,
+                email: document.getElementById("email").value,
+                senha: document.getElementById("senha").value,
+                
+            };
+
+            try {
+                const response = await fetch("http://localhost:3000/cadastro", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                });
+                const data = await response.json();
+                alert(data.mensagem || data.erro);
+            } catch (error) {
+                console.error("Erro ao cadastrar:", error);
+                alert("Erro ao cadastrar usuário.");
+            }
+        });
+    </script>
+</body>
+</html>     

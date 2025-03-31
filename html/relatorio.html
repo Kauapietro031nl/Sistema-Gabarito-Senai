@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Desempenho</title>
+    <link rel="icon" type="image/png" href="../IMG/marca.png">
+    <link rel="stylesheet" href="../css/relatorio.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="/img/SENAI_branco (1).svg" alt="Logo" class="logo"> <!-- Logo -->
+        <ul class="menu">
+            <li><a href="/HTML/gabarito.html" class="menu-item">Cadastrar Gabarito</a></li>
+            <li><a href="/HTML/correcao.html" class="menu-item">Correção</a></li>
+            <li><a href="/HTML/relatorio.html" class="menu-item">Relatório</a></li>
+        </ul>
+    </nav>
+    <h1>Relatório de Desempenho</h1>
+    
+    <div class="form-group">
+        <label for="curso">Selecione o Curso:</label>
+        <select id="curso" name="curso">
+            <option value="">Selecione um curso</option>
+        </select>
+        <button id="btn-gerar-relatorio">Gerar Relatório</button>
+    </div>
+    
+    <div id="relatorio-container" class="hidden">
+        <h2>Relatório: <span id="nome-curso"></span></h2>
+        
+        <div class="resumo">
+            <h3>Resumo</h3>
+            <p>Total de alunos: <strong id="total-alunos">0</strong></p>
+            <p>Média de acertos: <strong id="media-acertos">0</strong> de 20 (<span id="media-percentual">0%</span>)</p>
+            <p>Maior nota: <strong id="maior-nota">0</strong></p>
+            <p>Menor nota: <strong id="menor-nota">0</strong></p>
+        </div>
+        
+        <div class="botoes-relatorio">
+            <button id="btn-baixar-pdf">Baixar PDF da Turma</button>
+            <button id="btn-baixar-pdf-individual" class="hidden">Baixar PDF Individual</button>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Nome do Aluno</th>
+                    <th>Acertos</th>
+                    <th>Percentual</th>
+                    <th>Desempenho</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-relatorio">
+                <!-- Os dados serão inseridos aqui via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    
+    <div id="detalhe-aluno" class="hidden detalhe-aluno">
+        <div class="detalhe-header">
+            <h3>Detalhes do Aluno: <span id="nome-aluno-detalhe"></span></h3>
+            <button id="btn-fechar-detalhe">×</button>
+        </div>
+        <div class="detalhe-content">
+            <p>Matrícula: <strong id="matricula-detalhe"></strong></p>
+            <p>Curso: <strong id="curso-detalhe"></strong></p>
+            <p>Acertos: <strong id="acertos-detalhe"></strong> de 20 (<span id="percentual-detalhe"></span>)</p>
+            
+            <h4>Diagnóstico:</h4>
+            <ul id="diagnostico-lista"></ul>
+        </div>
+    </div>
+
+    <script src="/js/relatorio.js"></script>
+</body>
+</html>

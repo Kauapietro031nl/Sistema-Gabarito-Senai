@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="../IMG/marca.png">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="/img/SENAI_branco (1).svg" alt="Logo SENAI">
+    </nav>
+
+    <!-- Formulário -->
+    <div class="container">
+        <div class="links">
+            <a href="/HTML/loginInstrutor.html">Login</a>
+            <a href="/HTML/cadastro.html">Cadastro</a>
+        </div>
+        <form class="formulario" id="loginForm">
+            <div class="campo">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" placeholder="Digite o seu CPF">
+            </div>
+            <div class="campo">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" placeholder="Digite a sua senha">
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Pega os valores dos campos
+            const cpf = document.getElementById('cpf').value;
+            const senha = document.getElementById('senha').value;
+
+            try {
+                // Envia os dados para o backend
+                const response = await fetch('http://localhost:3000/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ cpf, senha })
+                });
+
+
+                // Processa a resposta do backend
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert(data.mensagem); // Exibe mensagem de sucesso
+                    // Redireciona para outra página (se necessário)
+                    window.location.href = 'index.html'; 
+
+                } else {
+                    alert(data.erro); // Exibe mensagem de erro
+                }
+            } catch (error) {
+                console.error('Erro ao enviar dados:', error);
+                alert('Erro ao tentar fazer login. Tente novamente.');
+            }
+        });
+    </script>
+</body>
+<script src="/script.js"></script>
+</html>
